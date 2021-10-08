@@ -20,7 +20,10 @@ export class RestaurantService{
   }
 
   public loadRestaurants(): void {
-    this.httpClient.get<Restaurant[]>("http://localhost:3000/restaurants").subscribe(value => this.restaurants.next(value))
+    this.httpClient.get<Restaurant[]>("http://localhost:3000/restaurants").subscribe(value => this.restaurants.next(value));
+  }
 
+  public addRestaurant(restaurant: Restaurant): void{
+    this.httpClient.post("http://localhost:3000/restaurants", restaurant).subscribe(value => this.restaurants.next([...this.restaurants.getValue(), restaurant]));
   }
 }
