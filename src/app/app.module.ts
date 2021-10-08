@@ -9,13 +9,19 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {RestaurantService} from "./Restaurant/services/restaurant.service";
 import { RestaurantFormComponent } from './Restaurant/components/restaurant-form/restaurant-form.component';
+import { RestaurantDetailComponent } from './Restaurant/pages/restaurant-detail/restaurant-detail.component';
+import { RestaurantEditComponent } from './Restaurant/components/restaurant-edit/restaurant-edit.component';
+import {ColorsDirective} from "./shared/directives/colors.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantSmartComponent,
     RestaurantTableComponent,
-    RestaurantFormComponent
+    RestaurantFormComponent,
+    RestaurantDetailComponent,
+    RestaurantEditComponent,
+    ColorsDirective
   ],
   imports: [
     BrowserModule,

@@ -26,4 +26,8 @@ export class RestaurantService{
   public addRestaurant(restaurant: Restaurant): void{
     this.httpClient.post("http://localhost:3000/restaurants", restaurant).subscribe(value => this.restaurants.next([...this.restaurants.getValue(), restaurant]));
   }
+
+  public editRestaurant(restaurant: Restaurant): void{
+    this.httpClient.put("http//localhost:3000/restaurants/:id",restaurant).subscribe(value => this.restaurants.next([...this.restaurants.getValue(), restaurant]));
+  }
 }
